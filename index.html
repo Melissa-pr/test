@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang = "fr">
+    <head>
+        <meta charset="UTF-8">
+        <title> Nereides </title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    </head>
+    <body>
+        <h1>Tableau de bord</h1>
+
+        
+        <section class="categorie">
+            <h2>Navigation</h2>
+            <div class = "position-elements">
+            <!-- vitesse -->
+                <a href="#popup-vitesse" class="carte-lien">
+                    <div class="vitesse">
+                        <h3> vitesse bateau</h3>
+                        <p class="chiffre-vitesse">--<span class="unite"> km/h</span></p>
+                    </div>
+                </a>
+                     
+            </div>
+        </section>
+
+        <section class="categorie">
+            <h2>Batterie</h2>
+            <div class = "position-elements">
+                
+                <a href="#popup-batterie1" class="carte-lien">      
+                    <!-- batterie  chargement -->
+                    <div class="batterie ">
+                        <h3> pourcentage batterie 1</h3>
+                        <p class="chiffre-batterie1">--<span class="unite"> %</span></p>
+                    </div>
+                </a>
+                <a href="#popup-batterie2" class="carte-lien">
+                    <div class="batterie ">
+                        <h3> pourcentage batterie 2</h3>
+                        <p class="chiffre-batterie2">--<span class="unite"> %</span></p>
+                    </div> 
+                </a>      
+
+                <!-- batterie  courant  -->
+                <a href="#popup-courantb1" class="carte-lien">
+                    <div class="batterie ">
+                        <h3> batterie 1 courant </h3>
+                        <p class="chiffre-courant1">--<span class="unite"> A</span></p>
+                    </div>
+                </a>
+
+                <a href="#popup-courantb2" class="carte-lien">
+                    <div class="batterie ">
+                        <h3> batterie 2 courant </h3>
+                        <p class="chiffre-courant2">--<span class="unite"> A</span></p>
+                    </div>
+                </a>
+
+                <!-- batterie  température  -->
+                <a href="#popup-temperatureb1" class="carte-lien">
+                    <div class="batterie ">
+                        <h3> batterie 1 température </h3>
+                        <p class="chiffre-temperature1">--<span class="unite"> °C</span></p>
+                    </div>
+                </a>
+
+                <a href="#popup-temperatureb2" class="carte-lien">
+                    <div class="batterie ">
+                        <h3> batterie 2 température </h3>
+                        <p class="chiffre-temperature2">--<span class="unite"> °C</span></p>
+                    </div>
+                </a> 
+            </div>
+        </section> 
+        
+        
+        <section class="categorie">
+            <h2>CM</h2>
+            <div class = "position-elements">
+             <!-- CM  information  -->
+                <a href="#popup-temperatureCM" class="carte-lien">
+                    <div class="CM ">
+                        <h3> CM température </h3>
+                        <p class="chiffre-temperatureCM">--<span class="unite"> °C</span></p>
+                    </div>
+                </a>
+
+                <a href="#popup-courantCM" class="carte-lien">
+                    <div class="CM ">
+                        <h3> CM courant </h3>
+                        <p class="chiffre-courantCM">--<span class="unite"> A</span></p>
+                    </div>
+                </a>
+
+                <a href="#popup-puissanceCM" class="carte-lien">
+                    <div class="CM ">
+                        <h3> CM puissance </h3>
+                        <p class="chiffre-puissanceCM">--<span class="unite"> W</span></p>
+                    </div>
+                </a> 
+            </div> 
+        </section>
+
+        <section class="categorie">
+            <h2>Panneaux solaires</h2>
+            <div class = "position-elements">
+             <!-- panneaux solaires information  -->
+                <a href="#popup-temperaturePS" class="carte-lien">
+                    <div class="PS ">
+                        <h3> Panneau solaire température </h3>
+                        <p class="chiffre-temperaturePS">--<span class="unite"> °C</span></p>
+                    </div>
+                </a>
+            </div>
+        </section>
+        <div id="popup-vitesse" class="plein-ecran-fond">
+            <a href="#" class="fermer-au-clic">
+                <div class="boite-graphique-large">
+                    <h2>Graphique Vitesse </h2>
+                    <div style="flex-grow: 1; position: relative; width: 100%;">
+                        <canvas id="chart-vitesse"></canvas>
+                    </div>                  
+                            <!-- Indication pour fermer -->
+                    <p class="instruction-fermer">Cliquez à nouveau sur le bouton pour fermer</p>
+                </div>
+            </a>     
+        </div>
+
+        <div id="popup-batterie1" class="plein-ecran-fond">
+            <a href="#" class="fermer-au-clic">
+                <div class="boite-graphique-large">
+                    <h2>Graphique Pourcentage Batterie 1 </h2>
+                    <div style="flex-grow: 1; position: relative; width: 100%;">
+                        <canvas id="chart-batterie1"></canvas>
+                    </div><!-- Indication pour fermer -->
+                    <p class="instruction-fermer">Cliquez à nouveau sur le bouton pour fermer</p>
+                </div>
+            </a>     
+        </div>
+        <div id="popup-batterie2" class="plein-ecran-fond">
+            <a href="#" class="fermer-au-clic">
+                <div class="boite-graphique-large">
+                    <h2>Graphique Pourcentage Batterie 2 </h2>
+                    <div style="flex-grow: 1; position: relative; width: 100%;">
+                        <canvas id="chart-batterie2"></canvas>
+                    </div>                  
+                            <!-- Indication pour fermer -->
+                    <p class="instruction-fermer">Cliquez à nouveau sur le bouton pour fermer</p>
+                </div>
+            </a>     
+        </div>
+        <div id="popup-courantb1" class="plein-ecran-fond">
+            <a href="#" class="fermer-au-clic">
+                <div class="boite-graphique-large">
+                    <h2>Graphique Courant Batterie 1 </h2>
+                    <div style="flex-grow: 1; position: relative; width: 100%;">
+                        <canvas id="chart-batterieC1"></canvas>
+                    </div>                   
+                            <!-- Indication pour fermer -->
+                    <p class="instruction-fermer">Cliquez à nouveau sur le bouton pour fermer</p>
+                </div>
+            </a>     
+        </div>
+        <div id="popup-courantb2" class="plein-ecran-fond">
+            <a href="#" class="fermer-au-clic">
+                <div class="boite-graphique-large">
+                    <h2>Graphique Courant Batterie 2 </h2>
+                    <div style="flex-grow: 1; position: relative; width: 100%;">
+                        <canvas id="chart-batterieC2"></canvas>
+                    </div>                    
+                            <!-- Indication pour fermer -->
+                    <p class="instruction-fermer">Cliquez à nouveau sur le bouton pour fermer</p>
+                </div>
+            </a>     
+        </div>
+        <div id="popup-temperatureb1" class="plein-ecran-fond">
+            <a href="#" class="fermer-au-clic">
+                <div class="boite-graphique-large">
+                    <h2>Graphique Température Batterie 1 </h2>
+                    <div style="flex-grow: 1; position: relative; width: 100%;">
+                        <canvas id="chart-batterieT1"></canvas>
+                    </div>                   
+                            <!-- Indication pour fermer -->
+                    <p class="instruction-fermer">Cliquez à nouveau sur le bouton pour fermer</p>
+                </div>
+            </a>     
+        </div>
+        <div id="popup-temperatureb2" class="plein-ecran-fond">
+            <a href="#" class="fermer-au-clic">
+                <div class="boite-graphique-large">
+                    <h2>Graphique Température Batterie 2 </h2>
+                    <div style="flex-grow: 1; position: relative; width: 100%;">
+                        <canvas id="chart-batterieT2"></canvas>
+                    </div>                     
+                            <!-- Indication pour fermer -->
+                    <p class="instruction-fermer">Cliquez à nouveau sur le bouton pour fermer</p>
+                </div>
+            </a>     
+        </div>
+        <div id="popup-temperatureCM" class="plein-ecran-fond">
+            <a href="#" class="fermer-au-clic">
+                <div class="boite-graphique-large">
+                    <h2>Graphique Température CM </h2>
+                    <div style="flex-grow: 1; position: relative; width: 100%;">
+                        <canvas id="chart-CMT"></canvas>
+                    </div>                     
+                            <!-- Indication pour fermer -->
+                    <p class="instruction-fermer">Cliquez à nouveau sur le bouton pour fermer</p>
+                </div>
+            </a>     
+        </div>
+        <div id="popup-courantCM" class="plein-ecran-fond">
+            <a href="#" class="fermer-au-clic">
+                <div class="boite-graphique-large">
+                    <h2>Graphique Courant CM </h2>
+                    <div style="flex-grow: 1; position: relative; width: 100%;">
+                        <canvas id="chart-CMC"></canvas>
+                    </div>                     
+                            <!-- Indication pour fermer -->
+                    <p class="instruction-fermer">Cliquez à nouveau sur le bouton pour fermer</p>
+                </div>
+            </a>     
+        </div>
+        <div id="popup-puissanceCM" class="plein-ecran-fond">
+            <a href="#" class="fermer-au-clic">
+                <div class="boite-graphique-large">
+                    <h2>Graphique Puissance CM </h2>
+                    <div style="flex-grow: 1; position: relative; width: 100%;">
+                        <canvas id="chart-CMP"></canvas>
+                    </div>                     
+                            <!-- Indication pour fermer -->
+                    <p class="instruction-fermer">Cliquez à nouveau sur le bouton pour fermer</p>
+                </div>
+            </a>     
+        </div>
+        <div id="popup-temperaturePS" class="plein-ecran-fond">
+            <a href="#" class="fermer-au-clic">
+                <div class="boite-graphique-large">
+                    <h2>Graphique Température PS </h2>
+                    <div style="flex-grow: 1; position: relative; width: 100%;">
+                        <canvas id="chart-PST"></canvas>
+                    </div>                     
+                            <!-- Indication pour fermer -->
+                    <p class="instruction-fermer">Cliquez à nouveau sur le bouton pour fermer</p>
+                </div>
+            </a>     
+        </div>
+    
+        <script>
+            // 1. Fonction qui génère X valeurs aléatoires entre une valeur min et max
+            function genererDonneesAleatoires(nombre, min, max) {
+                let donnees = [];
+                for (let i = 0; i < nombre; i++) {
+                    donnees.push((Math.random() * (max - min) + min).toFixed(1));
+                }
+                return donnees;
+            }
+
+            // 2. Faux repères de temps pour l'axe X
+            const heures = ['12:00', '12:05', '12:10', '12:15', '12:20', '12:25', '12:30', '12:35', '12:40', '12:45'];
+
+            // 3. Fonction réutilisable pour dessiner un graphique
+            function creerGraphique(idCanvas, label, minVal, maxVal) {
+                const ctx = document.getElementById(idCanvas);
+                if (!ctx) return;
+
+                new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: heures,
+                        datasets: [{
+                            label: label,
+                            data: genererDonneesAleatoires(10, minVal, maxVal),
+                            borderColor: '#ffffff',
+                            backgroundColor: 'rgba(255, 255, 255, 0.15)',
+                            borderWidth: 3,
+                            tension: 0.3,
+                            fill: true
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { labels: { color: '#ffffff', font: { size: 14 } } }
+                        },
+                        scales: {
+                            x: { ticks: { color: '#ffffff' }, grid: { color: 'rgba(255, 255, 255, 0.2)' } },
+                            y: { ticks: { color: '#ffffff' }, grid: { color: 'rgba(255, 255, 255, 0.2)' } }
+                        }
+                    }
+                });
+            }
+
+            // 4. Initialisation des graphiques dès que la page est chargée
+            window.addEventListener('DOMContentLoaded', () => {
+                creerGraphique('chart-vitesse', 'Vitesse (km/h)', 10, 35);
+                creerGraphique('chart-batterie1', 'Batterie 1 (%)', 50, 100);
+                creerGraphique('chart-batterie2', 'Batterie 2 (%)', 40, 95);
+                creerGraphique('chart-batterieC1', 'Batterie 2 (%)', 40, 95);
+                creerGraphique('chart-batterieC2', 'Batterie 2 (%)', 40, 95);
+                creerGraphique('chart-batterieT1', 'Batterie 2 (%)', 40, 95);
+                creerGraphique('chart-batterieT2', 'Batterie 2 (%)', 40, 95);
+                creerGraphique('chart-CMC', 'Batterie 2 (%)', 40, 95);
+                creerGraphique('chart-CMP', 'Batterie 2 (%)', 40, 95);
+                creerGraphique('chart-CMT', 'Batterie 2 (%)', 40, 95);
+                creerGraphique('chart-PST', 'Batterie 2 (%)', 40, 95);
+
+                
+            });
+        </script>
+    </body>
+</html>
